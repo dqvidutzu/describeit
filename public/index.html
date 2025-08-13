@@ -1,0 +1,36 @@
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="nav">
+  <h5>describe.it</h5>
+  </div>
+
+  <div id="lobby">
+    <h2>CREATE ROOM</h2>
+    <input type="number" id="maxPlayers" min="2" max="20" placeholder="players"><br>
+    <input type="number" id="impostorCount" min="1" max="3" placeholder="impostors"><br>
+    <button id="createBtn">CREATE</button>
+    <h2 style="color:white">OR</h2>
+    <div id="joinroom">
+    <input type="text" id="joinCode" placeholder="code">
+    <button id="joinBtn">JOIN</button>
+    </div>
+    <h2>JOIN ROOM</h2>
+  </div>
+
+  <div id="game" style="display:none;">
+    <div id="tohide">
+    <h2>code: <span id="roomCodeDisplay"></span></h2>
+    <h3>Players:</h3>
+      </div>
+      <div id="tocenter">
+    <ul id="playersList"></ul>
+    <button id="startBtn">start</button>
+    </div>
+    <p id="yourWord"></p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
