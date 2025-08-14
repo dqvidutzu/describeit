@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io(window.location.origin);
 
 // Elements
 const lobbyDiv = document.getElementById("lobby");
@@ -113,3 +113,4 @@ socket.on("waitingForHost", () => {
     playersList.innerHTML = "<li>waiting for host...</li>";
     document.getElementById("tohide").style.display = "none";
 });
+
