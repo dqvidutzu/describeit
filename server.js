@@ -52,9 +52,28 @@ io.on('connection', (socket) => {
         if (socket.id !== room.host) return socket.emit('error', 'you are not host');
 
         const words = [
-            "pirate", "dragon", "robot", "mermaid", "astronaut", "wizard", "vampire", "zombie", "superhero", "ninja",
-            "unicorn", "alien", "detective", "witch", "monster", "giant", "ghost", "fairy", "knight", "troll",
-        ];
+"Pizza","Laptop","Giraffe","Sunset","Volcano","Basketball","Dragon","Rainbow","Pirate","Rocket",
+"Elephant","Icecream","Castle","Wizard","Submarine","Skateboard","Tiger","Cupcake","Diamond","Ninja",
+"Monkey","Train","Robot","Banana","Vampire","Skyscraper","Mermaid","Pencil","Cactus","Unicorn",
+"Camera","Kangaroo","Soccer","Spaceship","Popcorn","Lion","Snowman","Jungle","Tiger","Hotdog",
+"Bicycle","Shark","Magician","Beach","Penguin","Octopus","Chocolate","Wizard","Volcano","Guitar",
+"Elephant","Carrot","Fairy","Dragon","Iceberg","Helmet","Dolphin","Skateboard","Pancake","Rocket",
+"Frog","Tiger","Castle","Lion","Banana","Astronaut","Butterfly","Candle","Pizza","Mermaid",
+"Robot","Elephant","Mountain","Penguin","Chocolate","Shark","Cupcake","Pirate","Sunflower","Icecream",
+"Kangaroo","Skyscraper","Soccer","Dragon","Rainbow","Ninja","Train","Rocket","Unicorn","Wizard",
+"Popcorn","Tiger","Submarine","Lion","Monkey","Giraffe","Chocolate","Wizard","Castle","Dragon",
+"Pizza","Bicycle","Penguin","Fairy","Hotdog","Skateboard","Rocket","Octopus","Butterfly","Ninja",
+"Carrot","Mermaid","Volcano","Tiger","Cupcake","Robot","Lion","Banana","Spaceship","Wizard",
+"Elephant","Chocolate","Shark","Pancake","Pirate","Sunflower","Icecream","Kangaroo","Skyscraper","Soccer",
+"Dragon","Rainbow","Ninja","Train","Rocket","Unicorn","Wizard","Popcorn","Tiger","Submarine",
+"Lion","Monkey","Giraffe","Chocolate","Wizard","Castle","Dragon","Pizza","Bicycle","Penguin",
+"Fairy","Hotdog","Skateboard","Rocket","Octopus","Butterfly","Ninja","Carrot","Mermaid","Volcano",
+"Tiger","Cupcake","Robot","Lion","Banana","Spaceship","Wizard","Elephant","Chocolate","Shark",
+"Pancake","Pirate","Sunflower","Icecream","Kangaroo","Skyscraper","Soccer","Dragon","Rainbow","Ninja",
+"Train","Rocket","Unicorn","Wizard","Popcorn","Tiger","Submarine","Lion","Monkey","Giraffe",
+"Chocolate","Wizard","Castle","Dragon","Pizza","Bicycle","Penguin","Fairy","Hotdog","Skateboard",
+"Rocket","Octopus","Butterfly","Ninja","Carrot","Mermaid","Volcano","Tiger","Cupcake","Robot"
+];
         const chosenWord = words[Math.floor(Math.random() * words.length)];
         const shuffledPlayers = [...room.players].sort(() => Math.random() - 0.5);
         const impostors = shuffledPlayers.slice(0, room.impostorCount);
@@ -92,4 +111,5 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
